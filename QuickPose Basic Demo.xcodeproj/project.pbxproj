@@ -10,11 +10,15 @@
 		D003502F297EE5C70009AFDA /* QuickPoseCore in Frameworks */ = {isa = PBXBuildFile; productRef = D003502E297EE5C70009AFDA /* QuickPoseCore */; };
 		D0035031297EE5C70009AFDA /* QuickPoseMP in Frameworks */ = {isa = PBXBuildFile; productRef = D0035030297EE5C70009AFDA /* QuickPoseMP */; };
 		D0035033297EE5C70009AFDA /* QuickPoseSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D0035032297EE5C70009AFDA /* QuickPoseSwiftUI */; };
-		D080484C298954DF001DA20D /* happy-dance.mov in Resources */ = {isa = PBXBuildFile; fileRef = D080484B298954DF001DA20D /* happy-dance.mov */; };
 		D0BB67B72976FC8900901A47 /* QuickPose_BasicDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D096814529475BF700E00306 /* QuickPose_BasicDemoApp.swift */; };
 		D0BB67B82976FC8900901A47 /* QuickPoseBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB67AE2976D2B100901A47 /* QuickPoseBasicView.swift */; };
 		D0BB67BE2976FC8900901A47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D096814929475BF800E00306 /* Assets.xcassets */; };
 		D0BB67BF2976FC8900901A47 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F9CB6E2949138100C4CB24 /* Launch Screen.storyboard */; };
+		E39F3AF02E7AAD3A00ABBF74 /* DetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F3AEE2E7AAD3A00ABBF74 /* DetectionView.swift */; };
+		E39F3AF12E7AAD3A00ABBF74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F3AEF2E7AAD3A00ABBF74 /* HomeView.swift */; };
+		E39F3AF22E7AAD3A00ABBF74 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F3AED2E7AAD3A00ABBF74 /* AppTheme.swift */; };
+		E39F3AF52E7AB44100ABBF74 /* 20250825_104834.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E39F3AF32E7AB44100ABBF74 /* 20250825_104834.mp4 */; };
+		E39F3AF62E7AB44100ABBF74 /* person.glb in Resources */ = {isa = PBXBuildFile; fileRef = E39F3AF42E7AB44100ABBF74 /* person.glb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,13 +36,17 @@
 
 /* Begin PBXFileReference section */
 		D003502D297EE5BD0009AFDA /* quickpose-ios-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "quickpose-ios-sdk"; path = ../../..; sourceTree = "<group>"; };
-		D080484B298954DF001DA20D /* happy-dance.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "happy-dance.mov"; path = "../../PickerDemo/QuickPose Demo/happy-dance.mov"; sourceTree = "<group>"; };
 		D096814529475BF700E00306 /* QuickPose_BasicDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickPose_BasicDemoApp.swift; sourceTree = "<group>"; };
 		D096814929475BF800E00306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0BB67AE2976D2B100901A47 /* QuickPoseBasicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickPoseBasicView.swift; sourceTree = "<group>"; };
 		D0BB67C42976FC8900901A47 /* QuickPose Basic Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickPose Basic Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F9CB6C2949110000C4CB24 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F9CB6E2949138100C4CB24 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E39F3AED2E7AAD3A00ABBF74 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		E39F3AEE2E7AAD3A00ABBF74 /* DetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionView.swift; sourceTree = "<group>"; };
+		E39F3AEF2E7AAD3A00ABBF74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E39F3AF32E7AB44100ABBF74 /* 20250825_104834.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 20250825_104834.mp4; sourceTree = SOURCE_ROOT; };
+		E39F3AF42E7AB44100ABBF74 /* person.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = person.glb; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +94,13 @@
 		D096814429475BF700E00306 /* QuickPose Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E39F3AF32E7AB44100ABBF74 /* 20250825_104834.mp4 */,
+				E39F3AF42E7AB44100ABBF74 /* person.glb */,
+				E39F3AED2E7AAD3A00ABBF74 /* AppTheme.swift */,
+				E39F3AEE2E7AAD3A00ABBF74 /* DetectionView.swift */,
+				E39F3AEF2E7AAD3A00ABBF74 /* HomeView.swift */,
 				D096814529475BF700E00306 /* QuickPose_BasicDemoApp.swift */,
 				D0BB67AE2976D2B100901A47 /* QuickPoseBasicView.swift */,
-				D080484B298954DF001DA20D /* happy-dance.mov */,
 				D096814929475BF800E00306 /* Assets.xcassets */,
 			);
 			path = "QuickPose Demo";
@@ -164,8 +176,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0BB67BE2976FC8900901A47 /* Assets.xcassets in Resources */,
+				E39F3AF52E7AB44100ABBF74 /* 20250825_104834.mp4 in Resources */,
+				E39F3AF62E7AB44100ABBF74 /* person.glb in Resources */,
 				D0BB67BF2976FC8900901A47 /* Launch Screen.storyboard in Resources */,
-				D080484C298954DF001DA20D /* happy-dance.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39F3AF02E7AAD3A00ABBF74 /* DetectionView.swift in Sources */,
+				E39F3AF12E7AAD3A00ABBF74 /* HomeView.swift in Sources */,
+				E39F3AF22E7AAD3A00ABBF74 /* AppTheme.swift in Sources */,
 				D0BB67B72976FC8900901A47 /* QuickPose_BasicDemoApp.swift in Sources */,
 				D0BB67B82976FC8900901A47 /* QuickPoseBasicView.swift in Sources */,
 			);
