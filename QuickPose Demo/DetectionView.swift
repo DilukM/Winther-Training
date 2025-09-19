@@ -66,7 +66,7 @@ struct DetectionView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             if videoURL == nil {
-                videoURL = Bundle.main.url(forResource: "20250825_104834", withExtension: "mp4") ?? Bundle.main.url(forResource: "happy-dance", withExtension: "mov")
+                videoURL = Bundle.main.url(forResource: "0918", withExtension: "mov") ?? Bundle.main.url(forResource: "happy-dance", withExtension: "mov")
             }
             if let url = videoURL, player == nil {
                 player = AVPlayer(url: url)

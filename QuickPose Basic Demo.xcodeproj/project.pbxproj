@@ -19,6 +19,7 @@
 		E39F3AF22E7AAD3A00ABBF74 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F3AED2E7AAD3A00ABBF74 /* AppTheme.swift */; };
 		E39F3AF52E7AB44100ABBF74 /* 20250825_104834.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E39F3AF32E7AB44100ABBF74 /* 20250825_104834.mp4 */; };
 		E39F3AF62E7AB44100ABBF74 /* person.glb in Resources */ = {isa = PBXBuildFile; fileRef = E39F3AF42E7AB44100ABBF74 /* person.glb */; };
+		E3FEAD902E7D03D9008DAF79 /* 0918.mov in Resources */ = {isa = PBXBuildFile; fileRef = E3FEAD8F2E7D03D9008DAF79 /* 0918.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		E39F3AEF2E7AAD3A00ABBF74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E39F3AF32E7AB44100ABBF74 /* 20250825_104834.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 20250825_104834.mp4; sourceTree = SOURCE_ROOT; };
 		E39F3AF42E7AB44100ABBF74 /* person.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = person.glb; sourceTree = SOURCE_ROOT; };
+		E3FEAD8F2E7D03D9008DAF79 /* 0918.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 0918.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		D096813929475BF700E00306 = {
 			isa = PBXGroup;
 			children = (
+				E3FEAD8F2E7D03D9008DAF79 /* 0918.mov */,
 				D02AE6EB2970161500EB5081 /* Packages */,
 				D096814429475BF700E00306 /* QuickPose Demo */,
 				D0F9CB6C2949110000C4CB24 /* Info.plist */,
@@ -177,6 +180,7 @@
 			files = (
 				D0BB67BE2976FC8900901A47 /* Assets.xcassets in Resources */,
 				E39F3AF52E7AB44100ABBF74 /* 20250825_104834.mp4 in Resources */,
+				E3FEAD902E7D03D9008DAF79 /* 0918.mov in Resources */,
 				E39F3AF62E7AB44100ABBF74 /* person.glb in Resources */,
 				D0BB67BF2976FC8900901A47 /* Launch Screen.storyboard in Resources */,
 			);
