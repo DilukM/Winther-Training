@@ -2,6 +2,7 @@ import SwiftUI
 import QuickPoseCore
 import QuickPoseSwiftUI
 import AVKit
+import AVFoundation
 
 struct DetectionView: View {
     @Environment(\.dismiss) private var dismiss
@@ -12,6 +13,8 @@ struct DetectionView: View {
     @State private var videoURL: URL? = nil
     @State private var observer: NSObjectProtocol? = nil
     @StateObject private var exerciseAnalyzer = DumbbellBentOverRowAnalyzer()
+    @State private var lastSpokenFeedback: Set<String> = [] // Track spoken feedback to avoid repetition
+    @State private var isTTSEnabled = true // Add TTS toggle state
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -37,7 +40,7 @@ struct DetectionView: View {
                     exerciseStatsView
                 }
                 Spacer()
-                if !exerciseAnalyzer.feedback.isEmpty {
+                if (!exerciseAnalyzer.feedback.isEmpty) {
                     exerciseFeedbackView
                 }
                 Spacer()
@@ -69,6 +72,22 @@ struct DetectionView: View {
                             .background(.ultraThinMaterial)
                             .clipShape(Circle())
                     }
+                    
+                    Button(action: { 
+                        DispatchQueue.main.async {
+                            isTTSEnabled.toggle()
+                            if (!isTTSEnabled) {
+                                ElevenLabsTTSService.shared.stopSpeaking()
+                            }
+                        }
+                    }) {
+                        Image(systemName: isTTSEnabled ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                            .font(.system(size: 18, weight: .semibold))
+                            .padding(10)
+                            .background(.ultraThinMaterial)
+                            .clipShape(Circle())
+                    }
+                    
                     Spacer()
                     Button(action: { 
                         DispatchQueue.main.async {
@@ -87,7 +106,7 @@ struct DetectionView: View {
         }
         .navigationBarBackButtonHidden(true)
         .onAppear {
-            if videoURL == nil {
+            if (videoURL == nil) {
                 videoURL = Bundle.main.url(forResource: "0918", withExtension: "mov") ?? Bundle.main.url(forResource: "happy-dance", withExtension: "mov")
             }
             if let url = videoURL, player == nil {
@@ -107,16 +126,33 @@ struct DetectionView: View {
             }
             quickPose.stop()
             player?.pause()
+            ElevenLabsTTSService.shared.stopSpeaking()
         }
         .onChange(of: isUsingVideo) { newValue in
             DispatchQueue.main.async {
-                if newValue {
+                if (newValue) {
                     player?.play()
                 } else {
                     player?.pause()
                 }
                 quickPose.stop()
                 startDetection()
+            }
+        }
+        .onChange(of: exerciseAnalyzer.feedback) { newFeedback in
+            // Speak new feedback messages that haven't been spoken recently (only if TTS is enabled)
+            guard isTTSEnabled else { return }
+
+            let newMessages = newFeedback.map { $0.message }.filter { !lastSpokenFeedback.contains($0) }
+
+            for message in newMessages {
+                ElevenLabsTTSService.shared.speak(text: message)
+                lastSpokenFeedback.insert(message)
+            }
+
+            // Limit the set size to prevent memory issues
+            if (lastSpokenFeedback.count > 20) {
+                lastSpokenFeedback = Set(lastSpokenFeedback.suffix(10))
             }
         }
     }
@@ -240,8 +276,7 @@ struct DetectionView: View {
                     print("DEBUG: QuickPose onFrame called with landmarks received")
                     let landmarkDict = convertLandmarksToDict(landmarks)
                     print("DEBUG: Converted \(landmarkDict.count) landmarks to dictionary")
-                    let exerciseFeedback = exerciseAnalyzer.analyzePose(landmarks: landmarkDict)
-                    // exerciseFeedback is now available in exerciseAnalyzer.feedback
+                    exerciseAnalyzer.analyzePose(landmarks: landmarkDict)
                 } else {
                     print("DEBUG: QuickPose onFrame called but landmarks is nil")
                 }
@@ -299,6 +334,8 @@ struct DetectionView: View {
         return landmarkDict
     }
 }
+
+// Duplicate ElevenLabsTTSService class and extension removed
 
 struct VideoPlayerView: UIViewControllerRepresentable {
     let player: AVPlayer

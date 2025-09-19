@@ -1,0 +1,78 @@
+{
+  "" : {
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose Basic Demo-master.dia",
+    "emit-module-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose Basic Demo-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose Basic Demo-master-emit-module.dia",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose Basic Demo-master.swiftdeps"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/QuickPose Demo/AppTheme.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/AppTheme.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/AppTheme.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/AppTheme.dia",
+    "index-unit-output-path" : "/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/AppTheme.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/AppTheme.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/AppTheme.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/AppTheme.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/AppTheme~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/QuickPose Demo/DetectionView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/DetectionView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/DetectionView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/DetectionView.dia",
+    "index-unit-output-path" : "/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/DetectionView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/DetectionView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/DetectionView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/DetectionView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/DetectionView~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/QuickPose Demo/ExerciseAnalyzer.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/ExerciseAnalyzer.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/ExerciseAnalyzer.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/ExerciseAnalyzer.dia",
+    "index-unit-output-path" : "/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/ExerciseAnalyzer.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/ExerciseAnalyzer.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/ExerciseAnalyzer.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/ExerciseAnalyzer.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/ExerciseAnalyzer~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/QuickPose Demo/HomeView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/HomeView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/HomeView.dia",
+    "index-unit-output-path" : "/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/HomeView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/HomeView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/HomeView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/HomeView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/HomeView~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/QuickPose Demo/QuickPose_BasicDemoApp.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose_BasicDemoApp.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose_BasicDemoApp.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose_BasicDemoApp.dia",
+    "index-unit-output-path" : "/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose_BasicDemoApp.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose_BasicDemoApp.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose_BasicDemoApp.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose_BasicDemoApp.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPose_BasicDemoApp~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/QuickPose Demo/QuickPoseBasicView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPoseBasicView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPoseBasicView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPoseBasicView.dia",
+    "index-unit-output-path" : "/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPoseBasicView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPoseBasicView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPoseBasicView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPoseBasicView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/SampleApps/SwiftUI/BasicDemo/build/QuickPose Basic Demo.build/Debug-iphonesimulator/QuickPose Basic Demo.build/Objects-normal/arm64/QuickPoseBasicView~partial.swiftmodule"
+  }
+}

@@ -1,0 +1,4 @@
+module QuickPoseCoreTarget {
+umbrella "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/QuickPoseCoreWrapper/include"
+export *
+}

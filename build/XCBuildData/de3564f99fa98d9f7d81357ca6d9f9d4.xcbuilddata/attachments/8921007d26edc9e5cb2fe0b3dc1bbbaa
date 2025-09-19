@@ -1,0 +1,68 @@
+{
+  "" : {
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSwiftUI-master.dia",
+    "emit-module-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSwiftUI-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSwiftUI-master-emit-module.dia",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSwiftUI-master.swiftdeps"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/Sources/QuickPoseSwiftUI/QuickPoseAssetRenderView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseAssetRenderView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseAssetRenderView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseAssetRenderView.dia",
+    "index-unit-output-path" : "/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseAssetRenderView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseAssetRenderView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseAssetRenderView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseAssetRenderView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseAssetRenderView~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/Sources/QuickPoseSwiftUI/QuickPoseCameraRenderView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraRenderView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraRenderView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraRenderView.dia",
+    "index-unit-output-path" : "/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraRenderView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraRenderView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraRenderView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraRenderView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraRenderView~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/Sources/QuickPoseSwiftUI/QuickPoseCameraSwitchView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraSwitchView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraSwitchView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraSwitchView.dia",
+    "index-unit-output-path" : "/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraSwitchView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraSwitchView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraSwitchView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraSwitchView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraSwitchView~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/Sources/QuickPoseSwiftUI/QuickPoseCameraView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraView.dia",
+    "index-unit-output-path" : "/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseCameraView~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/Sources/QuickPoseSwiftUI/QuickPoseOverlayView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseOverlayView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseOverlayView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseOverlayView.dia",
+    "index-unit-output-path" : "/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseOverlayView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseOverlayView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseOverlayView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseOverlayView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseOverlayView~partial.swiftmodule"
+  },
+  "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/Sources/QuickPoseSwiftUI/QuickPoseSimulatedCameraView.swift" : {
+    "const-values" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSimulatedCameraView.swiftconstvalues",
+    "dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSimulatedCameraView.d",
+    "diagnostics" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSimulatedCameraView.dia",
+    "index-unit-output-path" : "/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSimulatedCameraView.o",
+    "llvm-bc" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSimulatedCameraView.bc",
+    "object" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSimulatedCameraView.o",
+    "swift-dependencies" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSimulatedCameraView.swiftdeps",
+    "swiftmodule" : "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/build/quickpose-ios-sdk.build/Debug-iphonesimulator/QuickPoseSwiftUI.build/Objects-normal/arm64/QuickPoseSimulatedCameraView~partial.swiftmodule"
+  }
+}

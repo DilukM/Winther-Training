@@ -1,0 +1,17 @@
+Target dependency graph (8 targets)
+Target 'QuickPose Basic Demo' in project 'QuickPose Basic Demo'
+➜ Explicit dependency on target 'QuickPoseMP' in project 'quickpose-ios-sdk'
+➜ Explicit dependency on target 'QuickPoseSwiftUI' in project 'quickpose-ios-sdk'
+➜ Explicit dependency on target 'QuickPoseCore' in project 'quickpose-ios-sdk'
+Target 'QuickPoseCore' in project 'quickpose-ios-sdk'
+➜ Explicit dependency on target 'QuickPoseCoreTarget' in project 'quickpose-ios-sdk'
+Target 'QuickPoseCoreTarget' in project 'quickpose-ios-sdk' (no dependencies)
+Target 'QuickPoseSwiftUI' in project 'quickpose-ios-sdk'
+➜ Explicit dependency on target 'QuickPoseSwiftUI' in project 'quickpose-ios-sdk'
+➜ Explicit dependency on target 'QuickPoseCamera' in project 'quickpose-ios-sdk'
+Target 'QuickPoseSwiftUI' in project 'quickpose-ios-sdk'
+➜ Explicit dependency on target 'QuickPoseCamera' in project 'quickpose-ios-sdk'
+Target 'QuickPoseCamera' in project 'quickpose-ios-sdk' (no dependencies)
+Target 'QuickPoseMP' in project 'quickpose-ios-sdk'
+➜ Explicit dependency on target 'QuickPoseMPTarget-all' in project 'quickpose-ios-sdk'
+Target 'QuickPoseMPTarget-all' in project 'quickpose-ios-sdk' (no dependencies)

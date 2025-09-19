@@ -1,0 +1,4 @@
+module QuickPoseMPTarget_all {
+umbrella "/Users/aizotech/Documents/Flutter Projects/quickpose-ios-sdk-main/QuickPoseMPWrapper/include"
+export *
+}

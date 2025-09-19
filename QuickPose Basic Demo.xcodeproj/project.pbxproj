@@ -21,6 +21,8 @@
 		E39F3AF62E7AB44100ABBF74 /* person.glb in Resources */ = {isa = PBXBuildFile; fileRef = E39F3AF42E7AB44100ABBF74 /* person.glb */; };
 		E3FEAD902E7D03D9008DAF79 /* 0918.mov in Resources */ = {isa = PBXBuildFile; fileRef = E3FEAD8F2E7D03D9008DAF79 /* 0918.mov */; };
 		E3FEAD922E7D0B92008DAF79 /* ExerciseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FEAD912E7D0B92008DAF79 /* ExerciseAnalyzer.swift */; };
+		E4A1B2C52E8B123400ABCD14 /* ElevenLabsTTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A1B2C32E8B123400ABCD12 /* ElevenLabsTTSService.swift */; };
+		E4A1B2C62E8B123400ABCD15 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = E4A1B2C42E8B123400ABCD13 /* .env */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +53,8 @@
 		E39F3AF42E7AB44100ABBF74 /* person.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = person.glb; sourceTree = SOURCE_ROOT; };
 		E3FEAD8F2E7D03D9008DAF79 /* 0918.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 0918.mov; sourceTree = "<group>"; };
 		E3FEAD912E7D0B92008DAF79 /* ExerciseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseAnalyzer.swift; sourceTree = "<group>"; };
+		E4A1B2C32E8B123400ABCD12 /* ElevenLabsTTSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenLabsTTSService.swift; sourceTree = "<group>"; };
+		E4A1B2C42E8B123400ABCD13 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				D0BB67AE2976D2B100901A47 /* QuickPoseBasicView.swift */,
 				D096814929475BF800E00306 /* Assets.xcassets */,
 				E3FEAD912E7D0B92008DAF79 /* ExerciseAnalyzer.swift */,
+				E4A1B2C32E8B123400ABCD12 /* ElevenLabsTTSService.swift */,
+				E4A1B2C42E8B123400ABCD13 /* .env */,
 			);
 			path = "QuickPose Demo";
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				E3FEAD902E7D03D9008DAF79 /* 0918.mov in Resources */,
 				E39F3AF62E7AB44100ABBF74 /* person.glb in Resources */,
 				D0BB67BF2976FC8900901A47 /* Launch Screen.storyboard in Resources */,
+				E4A1B2C62E8B123400ABCD15 /* .env in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +209,7 @@
 				D0BB67B72976FC8900901A47 /* QuickPose_BasicDemoApp.swift in Sources */,
 				D0BB67B82976FC8900901A47 /* QuickPoseBasicView.swift in Sources */,
 				E3FEAD922E7D0B92008DAF79 /* ExerciseAnalyzer.swift in Sources */,
+				E4A1B2C52E8B123400ABCD14 /* ElevenLabsTTSService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

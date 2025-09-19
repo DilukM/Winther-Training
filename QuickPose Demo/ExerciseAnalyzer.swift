@@ -26,6 +26,12 @@ struct ExerciseFeedback {
     let timestamp: Date // Add timestamp for persistence
 }
 
+extension ExerciseFeedback: Equatable {
+    static func == (lhs: ExerciseFeedback, rhs: ExerciseFeedback) -> Bool {
+        return lhs.type == rhs.type && lhs.message == rhs.message && lhs.priority == rhs.priority
+    }
+}
+
 // MARK: - Dumbbell BentOverRow Analyzer
 class DumbbellBentOverRowAnalyzer: ObservableObject {
     @Published var currentPhase: ExercisePhase = .preparation
@@ -55,7 +61,7 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         let rightAnkle: CGPoint?
     }
     
-    func analyzePose(landmarks: [String: CGPoint]) -> [ExerciseFeedback] {
+    func analyzePose(landmarks: [String: CGPoint]) {
         frameCount += 1
         
         // Debug logging for landmark keys
@@ -89,8 +95,6 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         if frameCount % 60 == 0 { // Log every 2 seconds at 30fps
             print("DEBUG: Status - Phase: \(currentPhase), Reps: \(repCount), Active: \(isExerciseActive)")
         }
-        
-        return feedback
     }
     
     private func extractPoseLandmarks(from landmarks: [String: CGPoint]) -> PoseLandmarks {
@@ -278,6 +282,8 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         // More lenient wrist position requirements
         if abs(leftWristAngle - 180) > 45 || abs(rightWristAngle - 180) > 45 {
             addFeedback(.warning, "Try to keep wrists neutral for comfort", priority: 2)
+        } else {
+            addFeedback(.correct, "Good wrist alignment", priority: 1)
         }
     }
     

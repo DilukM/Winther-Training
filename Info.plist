@@ -57,5 +57,11 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+
+	<!-- ElevenLabs TTS configuration: provide your API key and (optionally) a voice ID -->
+	<key>ELEVENLABS_API_KEY</key>
+	<string>sk_7138c478aff9b8b077668a3b79e86ad384f34d0b1e9f2581</string>
+	<key>ELEVENLABS_VOICE_ID</key>
+	<string>21m00Tcm4TlvDq8ikWAM</string>
 </dict>
 </plist>
