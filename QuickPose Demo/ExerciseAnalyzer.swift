@@ -66,16 +66,16 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         
         // Debug logging for landmark keys
         if frameCount % 120 == 0 { // Log every 120 frames to avoid spam
-            print("DEBUG: Available landmark keys: \(landmarks.keys.sorted())")
+            //print("DEBUG: Available landmark keys: \(landmarks.keys.sorted())")
         }
         
         let pose = extractPoseLandmarks(from: landmarks)
         
         // Debug logging for landmarks
         if frameCount % 30 == 0 { // Log every 30 frames to avoid spam
-            print("DEBUG: Frame \(frameCount) - Landmarks received: \(landmarks.count)")
-            print("DEBUG: Left elbow: \(pose.leftElbow.map { "(\($0.x), \($0.y))" } ?? "nil"), Right elbow: \(pose.rightElbow.map { "(\($0.x), \($0.y))" } ?? "nil")")
-            print("DEBUG: Left shoulder: \(pose.leftShoulder.map { "(\($0.x), \($0.y))" } ?? "nil"), Right shoulder: \(pose.rightShoulder.map { "(\($0.x), \($0.y))" } ?? "nil")")
+           // print("DEBUG: Frame \(frameCount) - Landmarks received: \(landmarks.count)")
+           // print("DEBUG: Left elbow: \(pose.leftElbow.map { "(\($0.x), \($0.y))" } ?? "nil"), Right elbow: \(pose.rightElbow.map { "(\($0.x), \($0.y))" } ?? "nil")")
+           // print("DEBUG: Left shoulder: \(pose.leftShoulder.map { "(\($0.x), \($0.y))" } ?? "nil"), Right shoulder: \(pose.rightShoulder.map { "(\($0.x), \($0.y))" } ?? "nil")")
         }
         
         // Clear previous feedback
@@ -93,7 +93,7 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         
         // Periodic status logging
         if frameCount % 60 == 0 { // Log every 2 seconds at 30fps
-            print("DEBUG: Status - Phase: \(currentPhase), Reps: \(repCount), Active: \(isExerciseActive)")
+            //print("DEBUG: Status - Phase: \(currentPhase), Reps: \(repCount), Active: \(isExerciseActive)")
         }
     }
     
@@ -116,8 +116,8 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         
         // Debug logging for key landmarks
         if frameCount % 60 == 0 { // Log every 60 frames to avoid spam
-            print("DEBUG: Extracted landmarks - Left Elbow: \(pose.leftElbow != nil ? "✓" : "✗"), Right Elbow: \(pose.rightElbow != nil ? "✓" : "✗")")
-            print("DEBUG: Left Shoulder: \(pose.leftShoulder != nil ? "✓" : "✗"), Right Shoulder: \(pose.rightShoulder != nil ? "✓" : "✗")")
+           // print("DEBUG: Extracted landmarks - Left Elbow: \(pose.leftElbow != nil ? "✓" : "✗"), Right Elbow: \(pose.rightElbow != nil ? "✓" : "✗")")
+           // print("DEBUG: Left Shoulder: \(pose.leftShoulder != nil ? "✓" : "✗"), Right Shoulder: \(pose.rightShoulder != nil ? "✓" : "✗")")
         }
         
         return pose
@@ -321,7 +321,7 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
               let rightWrist = pose.rightWrist,
               let leftAnkle = pose.leftAnkle,
               let rightAnkle = pose.rightAnkle else {
-            print("DEBUG: Missing required landmarks for phase detection")
+            //print("DEBUG: Missing required landmarks for phase detection")
             return
         }
         
@@ -332,7 +332,7 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         
         // Require proper bent-over position (torso angle between 30-80 degrees)
         if torsoAngle < 30 || torsoAngle > 80 {
-            print("DEBUG: Upper body not properly bent forward - TorsoAngle: \(String(format: "%.1f", torsoAngle))°")
+            //print("DEBUG: Upper body not properly bent forward - TorsoAngle: \(String(format: "%.1f", torsoAngle))°")
             // Don't update phase if not in proper position
             return
         }
@@ -350,27 +350,27 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         
         // Debug coordinate values
         if frameCount % 30 == 0 {
-            print("DEBUG: TorsoAngle: \(String(format: "%.1f", torsoAngle))°, AvgWristHeight: \(String(format: "%.3f", avgWristHeight))")
-            print("DEBUG: ShoulderToAnkleDistance: \(String(format: "%.3f", shoulderToAnkleDistance))")
+            //print("DEBUG: TorsoAngle: \(String(format: "%.1f", torsoAngle))°, AvgWristHeight: \(String(format: "%.3f", avgWristHeight))")
+           // print("DEBUG: ShoulderToAnkleDistance: \(String(format: "%.3f", shoulderToAnkleDistance))")
         }
         
         // Wrist-based phase detection
         if avgWristHeight < -0.1 { // Wrists above shoulders = dumbbells raised
             newPhase = .top
-            print("DEBUG: DUMBBELLS RAISED - WristHeight: \(String(format: "%.3f", avgWristHeight))")
+            //print("DEBUG: DUMBBELLS RAISED - WristHeight: \(String(format: "%.3f", avgWristHeight))")
         } else if avgWristHeight > 0.8 { // Wrists near ankles = dumbbells lowered
             newPhase = .bottom
-            print("DEBUG: DUMBBELLS LOWERED - WristHeight: \(String(format: "%.3f", avgWristHeight))")
+            //print("DEBUG: DUMBBELLS LOWERED - WristHeight: \(String(format: "%.3f", avgWristHeight))")
         } else if currentPhase == .bottom || currentPhase == .lowering {
             newPhase = .raising
-            print("DEBUG: RAISING DUMBBELLS - WristHeight: \(String(format: "%.3f", avgWristHeight))")
+           // print("DEBUG: RAISING DUMBBELLS - WristHeight: \(String(format: "%.3f", avgWristHeight))")
         } else if currentPhase == .preparation {
             // Start with lowering phase if wrists are in middle position
             newPhase = .lowering
-            print("DEBUG: STARTING EXERCISE - WristHeight: \(String(format: "%.3f", avgWristHeight))")
+            //print("DEBUG: STARTING EXERCISE - WristHeight: \(String(format: "%.3f", avgWristHeight))")
         } else {
             newPhase = .lowering
-            print("DEBUG: LOWERING DUMBBELLS - WristHeight: \(String(format: "%.3f", avgWristHeight))")
+           // print("DEBUG: LOWERING DUMBBELLS - WristHeight: \(String(format: "%.3f", avgWristHeight))")
         }
         
         let timeSinceLastPhase = Date().timeIntervalSince(phaseStartTime)
@@ -378,40 +378,40 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         
         // Add more detailed logging for rep counting conditions
         if newPhase == .top && currentPhase == .raising {
-            print("DEBUG: REP CONDITION MET - Dumbbells fully raised, completing cycle")
+           // print("DEBUG: REP CONDITION MET - Dumbbells fully raised, completing cycle")
         }
         
         if newPhase != currentPhase && timeSinceLastPhase > adjustedMinimumTime {
-            print("DEBUG: Phase transition from \(currentPhase) to \(newPhase)")
+           // print("DEBUG: Phase transition from \(currentPhase) to \(newPhase)")
             lastPhase = currentPhase
             currentPhase = newPhase
             phaseStartTime = Date()
             
             // Count reps when completing the full up-down cycle (raising to top)
             if currentPhase == .top && lastPhase == .raising {
-                print("DEBUG: REP COUNTED! Completed full up-down cycle")
-                print("DEBUG: Rep count before increment: \(repCount)")
+               // print("DEBUG: REP COUNTED! Completed full up-down cycle")
+               // print("DEBUG: Rep count before increment: \(repCount)")
                 repCount += 1
                 isExerciseActive = true
-                print("DEBUG: Rep count after increment: \(repCount)")
+              //  print("DEBUG: Rep count after increment: \(repCount)")
                 
                 // Add feedback for completed rep
                 addFeedback(.correct, "Great rep! Now lower the dumbbells", priority: 1)
             } else if currentPhase == .bottom && lastPhase == .lowering {
                 // Dumbbells are fully lowered - notify to raise
                 addFeedback(.correct, "Dumbbells lowered - now raise them up", priority: 2)
-                print("DEBUG: Dumbbells fully lowered - user should raise")
+               // print("DEBUG: Dumbbells fully lowered - user should raise")
             } else if currentPhase == .top && lastPhase != .raising {
                 // Dumbbells are raised but not from raising phase - notify to lower
                 addFeedback(.correct, "Dumbbells raised - now lower them down", priority: 2)
-                print("DEBUG: Dumbbells raised - user should lower")
+               // print("DEBUG: Dumbbells raised - user should lower")
             } else {
-                print("DEBUG: No rep counted - Current: \(currentPhase), Last: \(lastPhase)")
+                //print("DEBUG: No rep counted - Current: \(currentPhase), Last: \(lastPhase)")
             }
         } else if newPhase != currentPhase {
-            print("DEBUG: Phase change blocked - time since last phase: \(String(format: "%.2f", timeSinceLastPhase))s (minimum: \(String(format: "%.2f", adjustedMinimumTime))s)")
+           // print("DEBUG: Phase change blocked - time since last phase: \(String(format: "%.2f", timeSinceLastPhase))s (minimum: \(String(format: "%.2f", adjustedMinimumTime))s)")
         } else {
-            print("DEBUG: No phase change needed - staying in \(currentPhase)")
+           // print("DEBUG: No phase change needed - staying in \(currentPhase)")
         }
     }
     
@@ -441,7 +441,7 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
     }
     
     func reset() {
-        print("DEBUG: Reset called - Previous rep count: \(repCount), Previous phase: \(currentPhase)")
+        //print("DEBUG: Reset called - Previous rep count: \(repCount), Previous phase: \(currentPhase)")
         currentPhase = .preparation
         feedback.removeAll()
         repCount = 0
@@ -449,6 +449,6 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         frameCount = 0
         lastPhase = .preparation
         phaseStartTime = Date()
-        print("DEBUG: Reset completed - New rep count: \(repCount), New phase: \(currentPhase)")
+        //print("DEBUG: Reset completed - New rep count: \(repCount), New phase: \(currentPhase)")
     }
 }

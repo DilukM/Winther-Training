@@ -38,7 +38,7 @@ struct HomeView: View {
         VStack(spacing: AppTheme.Spacing.large) {
             Spacer()
             VStack(spacing: AppTheme.Spacing.medium) {
-                Text("QuickPose Demo")
+                Text("Winther Training App")
                     .font(AppTheme.FontStyle.title)
                     .multilineTextAlignment(.center)
                 Text("Explore real‑time pose overlay and detection.")

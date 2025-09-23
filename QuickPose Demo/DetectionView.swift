@@ -266,23 +266,23 @@ struct DetectionView: View {
     }
 
     private func startDetection() {
-        print("DEBUG: Starting QuickPose detection...")
+       // print("DEBUG: Starting QuickPose detection...")
         quickPose.start(features: [.overlay(.wholeBody)], onFrame: { status, image, features, feedback, landmarks in
             DispatchQueue.main.async {
                 overlayImage = image
                 
                 // Process landmarks for exercise analysis on main thread
                 if let landmarks = landmarks {
-                    print("DEBUG: QuickPose onFrame called with landmarks received")
+                   // print("DEBUG: QuickPose onFrame called with landmarks received")
                     let landmarkDict = convertLandmarksToDict(landmarks)
-                    print("DEBUG: Converted \(landmarkDict.count) landmarks to dictionary")
+                   // print("DEBUG: Converted \(landmarkDict.count) landmarks to dictionary")
                     exerciseAnalyzer.analyzePose(landmarks: landmarkDict)
                 } else {
-                    print("DEBUG: QuickPose onFrame called but landmarks is nil")
+                   // print("DEBUG: QuickPose onFrame called but landmarks is nil")
                 }
             }
         })
-        print("DEBUG: QuickPose start() called")
+        //print("DEBUG: QuickPose start() called")
     }
     
     private func convertLandmarksToDict(_ landmarks: QuickPose.Landmarks) -> [String: CGPoint] {
@@ -329,7 +329,7 @@ struct DetectionView: View {
         let rightAnkle = landmarks.landmark(forBody: .ankle(side: .right))
         landmarkDict["right_ankle"] = CGPoint(x: rightAnkle.x, y: rightAnkle.y)
         
-        print("DEBUG: Converted \(landmarkDict.count) landmarks to dictionary")
+        //print("DEBUG: Converted \(landmarkDict.count) landmarks to dictionary")
         
         return landmarkDict
     }
