@@ -38,12 +38,20 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
     @Published var feedback: [ExerciseFeedback] = []
     @Published var repCount: Int = 0
     @Published var isExerciseActive: Bool = false
+    // New: single active feedback selection for UI/TTS
+    @Published var activeFeedback: ExerciseFeedback? = nil
+    // New: publish current torso bend angle for overlay display
+    @Published var currentTorsoAngle: Double? = nil
+
+    // Maintain a persistent queue of current issues (by message)
+    private var currentIssues: [String: ExerciseFeedback] = [:]
     
     private var frameCount = 0
     private var lastPhase: ExercisePhase = .preparation
     private var phaseStartTime: Date = Date()
     private var minimumPhaseTime: TimeInterval = 0.3 // Minimum time in each phase
-    
+    private let analysisInterval = 15
+   
     // Key pose landmarks for bent over row
     struct PoseLandmarks {
         let leftShoulder: CGPoint?
@@ -78,18 +86,20 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
            // print("DEBUG: Left shoulder: \(pose.leftShoulder.map { "(\($0.x), \($0.y))" } ?? "nil"), Right shoulder: \(pose.rightShoulder.map { "(\($0.x), \($0.y))" } ?? "nil")")
         }
         
-        // Clear previous feedback
+        // Recompute issues only on analysis frames to prevent UI flicker
+        var didAnalyzeThisFrame = false
         feedback.removeAll()
-        
-        // Only analyze every 15 frames to reduce feedback frequency (about 2x per second at 30fps)
-        if frameCount % 15 == 0 {
-            // Analyze pose and generate feedback
+        if frameCount % analysisInterval == 0 {
             analyzeBodyPosition(pose: pose)
             analyzeExerciseMovement(pose: pose)
+            didAnalyzeThisFrame = true
         }
         
         // Update phase if needed (check every frame for responsiveness)
         updateExercisePhase(pose: pose)
+        
+        // Update the persistent issues queue and active selection only when we analyzed
+        updateIssuesAndActiveFeedback(didAnalyze: didAnalyzeThisFrame)
         
         // Periodic status logging
         if frameCount % 60 == 0 { // Log every 2 seconds at 30fps
@@ -124,7 +134,7 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
     }
     
     private func analyzeBodyPosition(pose: PoseLandmarks) {
-        // Check torso angle (should be bent forward 45-90 degrees)
+        // Check torso angle (should be bent forward 35-55 degrees)
         analyzeTorsoAngle(pose: pose)
         
         // Check knee position (slight bend, stable)
@@ -156,13 +166,15 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         // Calculate torso angle relative to vertical
         let torsoAngle = atan2(abs(shoulderCenter.x - hipCenter.x), abs(shoulderCenter.y - hipCenter.y)) * 180 / .pi
         
-        // More practical ranges for bent-over row position
-        if torsoAngle < 30 {
-            addFeedback(.error, "Bend forward more - keep your back at 45° angle for proper form", priority: 6)
-        } else if torsoAngle > 80 {
-            addFeedback(.warning, "Don't bend too far forward - maintain control at about 45°", priority: 7)
-        } else if torsoAngle >= 35 && torsoAngle <= 70 {
-            addFeedback(.correct, "Perfect bent-over position for rows", priority: 1)
+        // Practical target range for bent-over row position: 35°–55°
+        let targetMin: Double = 35
+        let targetMax: Double = 55
+        if torsoAngle < targetMin {
+            addFeedback(.warning, "Bend forward a bit more - aim for 35–55°", priority: 6)
+        } else if torsoAngle > targetMax {
+            addFeedback(.warning, "Reduce forward bend slightly - aim for 35–55°", priority: 6)
+        } else {
+            addFeedback(.correct, "Good bent-over position", priority: 1)
         }
     }
     
@@ -329,10 +341,11 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         let shoulderCenter = CGPoint(x: (leftShoulder.x + rightShoulder.x) / 2, y: (leftShoulder.y + rightShoulder.y) / 2)
         let hipCenter = CGPoint(x: (leftHip.x + rightHip.x) / 2, y: (leftHip.y + rightHip.y) / 2)
         let torsoAngle = atan2(abs(shoulderCenter.x - hipCenter.x), abs(shoulderCenter.y - hipCenter.y)) * 180 / .pi
+        // Publish latest angle for UI overlay
+        currentTorsoAngle = torsoAngle
         
-        // Require proper bent-over position (torso angle between 30-80 degrees)
-        if torsoAngle < 30 || torsoAngle > 80 {
-            //print("DEBUG: Upper body not properly bent forward - TorsoAngle: \(String(format: "%.1f", torsoAngle))°")
+        // Require proper bent-over position (torso angle between 35–55 degrees)
+        if torsoAngle < 35 || torsoAngle > 55 {
             // Don't update phase if not in proper position
             return
         }
@@ -419,6 +432,66 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         feedback.append(ExerciseFeedback(type: type, message: message, priority: priority, timestamp: Date()))
     }
     
+    // Choose one feedback at a time and keep it until resolved
+    private func updateActiveFeedbackSelection() {
+        // If the current active feedback's message is still present among current issues, keep it
+        if let current = activeFeedback, feedback.contains(where: { $0.message == current.message }) {
+            return
+        }
+        
+        // Otherwise, pick the highest-priority issue among current feedback
+        activeFeedback = selectTopFeedback(from: feedback)
+    }
+
+    // Keep a persistent set of issues; promote next by severity/priority when current is resolved
+    private func updateIssuesAndActiveFeedback(didAnalyze: Bool) {
+        // If we didn't analyze this frame, keep showing the current active issue
+        guard didAnalyze else { return }
+
+        let presentMessages = Set(feedback.map { $0.message })
+
+        // Add or update issues that are present this analysis cycle
+        for f in feedback {
+            if let existing = currentIssues[f.message] {
+                // Keep original timestamp (first seen) to preserve ordering
+                currentIssues[f.message] = ExerciseFeedback(type: f.type, message: f.message, priority: f.priority, timestamp: existing.timestamp)
+            } else {
+                currentIssues[f.message] = f
+            }
+        }
+
+        // Remove resolved issues that are no longer present
+        for (msg, _) in currentIssues where !presentMessages.contains(msg) {
+            currentIssues.removeValue(forKey: msg)
+        }
+
+        // Keep current active feedback if still present
+        if let current = activeFeedback, currentIssues[current.message] != nil {
+            return
+        }
+
+        // Otherwise select the next top issue
+        activeFeedback = selectTopFeedback(from: Array(currentIssues.values))
+    }
+
+    private func selectTopFeedback(from issues: [ExerciseFeedback]) -> ExerciseFeedback? {
+        return issues.sorted { a, b in
+            let sa = severityRank(a.type)
+            let sb = severityRank(b.type)
+            if sa != sb { return sa > sb }
+            if a.priority != b.priority { return a.priority > b.priority }
+            return a.timestamp < b.timestamp
+        }.first
+    }
+
+    private func severityRank(_ type: FeedbackType) -> Int {
+        switch type {
+        case .error: return 3
+        case .warning: return 2
+        case .correct: return 1
+        }
+    }
+    
     // MARK: - Helper Functions
     private func calculateAngle(point1: CGPoint, vertex: CGPoint, point2: CGPoint) -> Double {
         let vector1 = CGPoint(x: point1.x - vertex.x, y: point1.y - vertex.y)
@@ -449,6 +522,25 @@ class DumbbellBentOverRowAnalyzer: ObservableObject {
         frameCount = 0
         lastPhase = .preparation
         phaseStartTime = Date()
+        activeFeedback = nil
+        currentIssues.removeAll()
         //print("DEBUG: Reset completed - New rep count: \(repCount), New phase: \(currentPhase)")
+    }
+
+    // Advance to next feedback after a positive feedback has been spoken
+    func advanceActiveFeedbackAfterPositiveSpoken(spokenMessage: String) {
+        // Ensure we are still on the same active feedback and it is positive
+        guard let current = activeFeedback,
+              current.type == .correct,
+              current.message == spokenMessage else { return }
+        
+        // Pick the next best issue excluding the current one
+        let candidates = Array(currentIssues.values).filter { $0.message != current.message }
+        if let next = selectTopFeedback(from: candidates) {
+            activeFeedback = next
+        } else {
+            // No other issues present; clear active feedback
+            activeFeedback = nil
+        }
     }
 }

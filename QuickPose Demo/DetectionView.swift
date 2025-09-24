@@ -15,13 +15,15 @@ struct DetectionView: View {
     @StateObject private var exerciseAnalyzer = DumbbellBentOverRowAnalyzer()
     @State private var lastSpokenFeedback: Set<String> = [] // Track spoken feedback to avoid repetition
     @State private var isTTSEnabled = true // Add TTS toggle state
+    @State private var isSpeaking = false // prevent overlap
 
     var body: some View {
         ZStack(alignment: .topLeading) {
             if isUsingVideo, let url = videoURL {
                 VideoPlayerView(player: player!)
                     .ignoresSafeArea()
-                hiddenDetectionFeed(videoURL: url)
+                // Detection runs on a hidden camera feed, not the stock video
+                hiddenCameraDetectionFeed()
             } else {
                 GeometryReader { geometry in
                     ZStack(alignment: .top) {
@@ -37,11 +39,16 @@ struct DetectionView: View {
             VStack {
                 HStack {
                     Spacer()
-                    exerciseStatsView
+                    VStack(alignment: .trailing, spacing: 8) {
+                        exerciseStatsView
+                        if let angle = exerciseAnalyzer.currentTorsoAngle {
+                            angleBadge(angle)
+                        }
+                    }
                 }
                 Spacer()
-                if (!exerciseAnalyzer.feedback.isEmpty) {
-                    exerciseFeedbackView
+                if let active = exerciseAnalyzer.activeFeedback { // show single active feedback
+                    singleFeedbackView(active)
                 }
                 Spacer()
             }
@@ -135,24 +142,28 @@ struct DetectionView: View {
                 } else {
                     player?.pause()
                 }
-                quickPose.stop()
-                startDetection()
+                // Detection continues on camera regardless of toggle
             }
         }
-        .onChange(of: exerciseAnalyzer.feedback) { newFeedback in
-            // Speak new feedback messages that haven't been spoken recently (only if TTS is enabled)
+        .onChange(of: exerciseAnalyzer.activeFeedback) { newActive in
             guard isTTSEnabled else { return }
-
-            let newMessages = newFeedback.map { $0.message }.filter { !lastSpokenFeedback.contains($0) }
-
-            for message in newMessages {
-                ElevenLabsTTSService.shared.speak(text: message)
-                lastSpokenFeedback.insert(message)
-            }
-
-            // Limit the set size to prevent memory issues
-            if (lastSpokenFeedback.count > 20) {
-                lastSpokenFeedback = Set(lastSpokenFeedback.suffix(10))
+            guard let msg = newActive?.message else { return }
+            // Speak only when changed and not already speaking same message
+            if !lastSpokenFeedback.contains(msg) {
+                isSpeaking = true
+                ElevenLabsTTSService.shared.speak(text: msg) { ok in
+                    DispatchQueue.main.async {
+                        self.isSpeaking = false
+                        // If the spoken feedback is positive, promote the next message
+                        if ok, let current = self.exerciseAnalyzer.activeFeedback, current.type == .correct {
+                            self.exerciseAnalyzer.advanceActiveFeedbackAfterPositiveSpoken(spokenMessage: msg)
+                        }
+                    }
+                }
+                lastSpokenFeedback.insert(msg)
+                if lastSpokenFeedback.count > 20 {
+                    lastSpokenFeedback = Set(lastSpokenFeedback.suffix(10))
+                }
             }
         }
     }
@@ -188,27 +199,21 @@ struct DetectionView: View {
         }
     }
     
-    private var exerciseFeedbackView: some View {
-        VStack(spacing: 8) {
-            ForEach(Array(exerciseAnalyzer.feedback.sorted { $0.priority > $1.priority }.prefix(2).enumerated()), id: \.offset) { index, feedback in
-                HStack {
-                    Image(systemName: feedbackIcon(for: feedback.type))
-                        .foregroundColor(feedbackColor(for: feedback.type))
-                        .font(.system(size: 16, weight: .semibold))
-                    
-                    Text(feedback.message)
-                        .font(.system(size: 14, weight: .medium))
-                        .foregroundColor(.primary)
-                        .multilineTextAlignment(.leading)
-                    
-                    Spacer()
-                }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
-                .background(feedbackBackgroundColor(for: feedback.type))
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-            }
+    private func singleFeedbackView(_ feedback: ExerciseFeedback) -> some View {
+        HStack {
+            Image(systemName: feedbackIcon(for: feedback.type))
+                .foregroundColor(feedbackColor(for: feedback.type))
+                .font(.system(size: 16, weight: .semibold))
+            Text(feedback.message)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.primary)
+                .multilineTextAlignment(.leading)
+            Spacer()
         }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(feedbackBackgroundColor(for: feedback.type))
+        .clipShape(RoundedRectangle(cornerRadius: 8))
         .padding(.horizontal)
     }
     
@@ -257,9 +262,24 @@ struct DetectionView: View {
         }
     }
 
+    private func angleBadge(_ angle: Double) -> some View {
+        let inRange = angle >= 35 && angle <= 55
+        let color: Color = inRange ? .green : .orange
+        return HStack(spacing: 6) {
+            Text("Bend: \(Int(round(angle)))°")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundColor(color)
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 6)
+        .background(.ultraThinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+
     @ViewBuilder
-    private func hiddenDetectionFeed(videoURL: URL) -> some View {
-        QuickPoseSimulatedCameraView(useFrontCamera: false, delegate: quickPose, video: videoURL)
+    private func hiddenCameraDetectionFeed() -> some View {
+        // Hidden camera view feeding frames to QuickPose for detection
+        QuickPoseCameraView(useFrontCamera: false, delegate: quickPose)
             .frame(width: 1, height: 1)
             .opacity(0.01)
             .allowsHitTesting(false)
@@ -334,8 +354,6 @@ struct DetectionView: View {
         return landmarkDict
     }
 }
-
-// Duplicate ElevenLabsTTSService class and extension removed
 
 struct VideoPlayerView: UIViewControllerRepresentable {
     let player: AVPlayer
